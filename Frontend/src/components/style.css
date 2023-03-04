@@ -1,0 +1,52 @@
+.navigation{
+    margin-left: 60%;
+    display: flex;
+    flex-direction: row;
+}
+.navigation .links{
+    margin-left: 10px;
+    border: 1px solid  rgb(8, 13, 15);
+    background-color: rgb(17, 27, 32);
+    text-decoration: none;
+}
+.links{
+    text-decoration: none;
+}
+.forms{
+    border: 1px solid  rgb(197, 197, 190);
+    border-radius: 10px;
+    padding: 15px; 
+    align-items: center;
+    margin: 10px;
+    height: 20%;
+    width: 98%;
+    background-color: rgb(116, 41, 41);
+}
+.form .heading{
+    font-weight: 800;
+    font-size: large;
+    color: rgb(99, 99, 95);
+}
+
+.forms .field{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(243, 243, 234);
+    margin: 5px;
+    cursor: pointer;
+    
+}
+.about{
+    margin: 20px;
+    padding: 10px; 
+}
+.about p{
+    text-align:justify ;
+    margin: 15px;
+    padding: 5px;
+}
+.about h2{
+    align-items: center;
+}
