@@ -10,7 +10,7 @@ const Header = () => {
         <Toolbar>
             <Typography variant='h6' sx={{ my: 2 }} color="text.secondary">Movie Management</Typography>
             <div className='navigation'>
-            <Link to="/" className='links'><Button>Home</Button></Link>
+            <Link to="/" className='links'><Button>Movies</Button></Link>
             <Link to="/addmovie" className='links'><Button>ADD</Button></Link>
             <Link to="/searchmovie" className='links'><Button>Search</Button></Link>
             <Link to='/about' className='links'><Button>About</Button></Link>

@@ -25,7 +25,7 @@ const movieInfo = require('./models/mongodb')
 //3. API creation
 
 // READ
-app.get('/api/viewmovies',async(req,res)=>{
+app.get('/viewmovies',async(req,res)=>{
     try{
       let result = await movieInfo.find();
       res.json(result);
@@ -37,11 +37,11 @@ app.get('/api/viewmovies',async(req,res)=>{
 
   //post for course
 
-app.post('/api/createmovie',(req,res)=>{
+app.post('/createmovie',(req,res)=>{
     try {
         console.log(req.body)//server data
-    let course = new movieInfo(req.body); //passing the data to DB
-    course.save();//saving to db
+    let movie = new movieInfo(req.body); //passing the data to DB
+    movie.save();//saving to db
     res.send("Data Added")
     } catch (error) {
         res.status(500).send(error);
@@ -49,32 +49,21 @@ app.post('/api/createmovie',(req,res)=>{
   })
 
   //get single Data
-
-app.get("/api/singlemovie/:id", async(req,res)=>{
-  try{
-     const {id}=req.params;
-     const singlemovie=await movieInfo.findById({_id:id});
-     res.status(201).json(singlemovie);
-  }catch(err){
-      res.status(422).json(err);
-  }
-})
-
+  
   //UPDATE
 
-app.post('/api/updatemovie',(req,res)=>{
-    try {
-      let result =  movieInfo.findByIdAndUpdate(req.body._id,req.body)
-      res.send(result);
-      res.send("data updated")
-    } catch (error) {
-      res.status(500).send(error);
+  app.post('/updatemovie',  async (req,res) => {
+    try{
+        let result =  await movieInfo.findByIdAndUpdate(req.body._id, req.body);
+        res.send("Data Updated");
     }
-  })
-
+    catch(error){
+        res.status(500).send(error);
+    }
+})
   //DELETE
 
-app.post('/api/deletemovie',async(req,res)=>{
+app.post('/deletemovie',async(req,res)=>{
     try {
       await movieInfo.findByIdAndDelete(req.body._id);
     res.send("Data deleted")
@@ -89,7 +78,7 @@ app.post('/api/deletemovie',async(req,res)=>{
 app.post('/api/search',async(req,res)=>{
   try {
     let result = await movieInfo.find(req.body);
-    //let result = await CourseInfo.find({ "c_name": { $regex: '.' + req.body.c_name + '.' } });
+    //let result = await movieInfo.find({ "moviename": { $regex: '.' + req.body.moviename + '.' } });
     res.json(result);
   } catch (error) {
     res.status(500).send(error);
@@ -100,3 +89,10 @@ app.post('/api/search',async(req,res)=>{
 app.listen(5000,()=>{
     console.log("Server is running in port 5000")
 })
+
+//Cyclic_Deployment
+const path = require('path');
+app.use(express.static(path.join(__dirname,'/build')));
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname,'/build/index.html'));
+ });
