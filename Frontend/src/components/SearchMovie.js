@@ -46,7 +46,7 @@ const SearchMovie = () => {
         <div className='forms'>
         <Typography>Course Movies</Typography>
       <TextField name='moviename' value={movies.moviename} onChange={setMovie} className='field' variant='outlined' label='Movie Name'></TextField>
-      <Button variant='contained' color='secondary' onClick={searchMovie}>Search</Button>
+      <Button variant='contained' color='warning' onClick={searchMovie}>Search</Button>
         </div>
         <div className='forms'>
         <TableContainer component={Paper}>

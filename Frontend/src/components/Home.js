@@ -11,8 +11,9 @@ import Editmovie from "./EditMovie";
 //Style
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-        backgroundColor: theme.palette.common.black,
-        color: theme.palette.common.white,
+        backgroundColor: theme.palette.common.white,
+        color: theme.palette.primary.dark,
+        fontSize:18
     },
     [`&.${tableCellClasses.body}`]: {
         fontSize: 15,
@@ -25,7 +26,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     },
     // hide last border
     '&:last-child td, &:last-child th': {
-        border: 2,
+        border: 5,
     },
 }));
 
@@ -79,16 +80,16 @@ const Home = () => {
                     <Table sx={{ minWidth: 700 }} aria-label="customized table">
                         <TableHead>
                             <TableRow>
-                                <StyledTableCell>Movie Name</StyledTableCell>
+                                <StyledTableCell>Movie</StyledTableCell>
                                 <StyledTableCell align="right">Actor</StyledTableCell>
                                 <StyledTableCell align="right">Actress</StyledTableCell>
                                 <StyledTableCell align="right">Director</StyledTableCell>
-                                <StyledTableCell align="right">Release Year</StyledTableCell>
+                                <StyledTableCell align="right">Released</StyledTableCell>
                                 <StyledTableCell align="right">Camera</StyledTableCell>
                                 <StyledTableCell align="right">Producer</StyledTableCell>
                                 <StyledTableCell align="right">Language</StyledTableCell>
                                 <StyledTableCell align="right">Edit Movie</StyledTableCell>
-                                <StyledTableCell align="right">Delete Movie</StyledTableCell>
+                                <StyledTableCell align="right">Delete</StyledTableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -104,7 +105,7 @@ const Home = () => {
                                         <StyledTableCell align="right">{value.producer}</StyledTableCell>
                                         <StyledTableCell align="right">{value.language}</StyledTableCell>
                                         <StyledTableCell align="right">
-                                        <Button variant='contained' onClick={()=>updateMovie(value)} color='secondary'>Update</Button>
+                                        <Button variant='contained' onClick={()=>updateMovie(value)} color='warning'>Update</Button>
                                         </StyledTableCell>
                                         <StyledTableCell align='right'>
                                             <Button variant='contained' color='error' onClick={() => { deletemovie(value._id) }}>Delete</Button>

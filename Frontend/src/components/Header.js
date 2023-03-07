@@ -6,9 +6,9 @@ const Header = () => {
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
-      <AppBar position='static' color='error'>
+      <AppBar position='static' color='primary'>
         <Toolbar>
-            <Typography variant='h6' sx={{ my: 2 }} color="text.secondary">Movie Management</Typography>
+            <Typography variant='h6' sx={{ my: 2 }} color="palette.warning.light">Movie Management</Typography>
             <div className='navigation'>
             <Link to="/" className='links'><Button>Movies</Button></Link>
             <Link to="/addmovie" className='links'><Button>ADD</Button></Link>

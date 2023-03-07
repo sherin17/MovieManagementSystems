@@ -46,7 +46,7 @@ const EditMovie = (props) => {
           <TextField name='camera' value={newmovies.camera} onChange={inputHandler} variant='outlined' color='secondary' label='Camera' className='field'></TextField>
           <TextField name='producer' value={newmovies.producer} onChange={inputHandler} variant='outlined' color='secondary' label='Producer' className='field'></TextField>
           <TextField name='language' value={newmovies.language} onChange={inputHandler} variant='outlined' color='secondary' label='Language' className='field'></TextField>
-          <Button variant='contained' color='secondary' onClick={readValues}>Update</Button>
+          <Button variant='contained' color='warning' onClick={readValues}>Update</Button>
         </div>
     </div>
   )

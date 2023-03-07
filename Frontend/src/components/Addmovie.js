@@ -39,7 +39,7 @@ const Addmovie = () => {
         <TextField name='camera' value={movie.camera} onChange={setMovie} variant='outlined' color='secondary' label='Camera' className='field'></TextField>
         <TextField name='producer' value={movie.producer} onChange={setMovie} variant='outlined' color='secondary' label='Producer' className='field'></TextField>
         <TextField name='language' value={movie.language} onChange={setMovie} variant='outlined' color='secondary' label='Language' className='field'></TextField>
-        <Button variant='contained' color='secondary' onClick={addmovie}>Add</Button>
+        <Button variant='contained' color='warning' onClick={addmovie}>Add</Button>
         <Button><Link to="/" className="btn btn-danger">Back</Link></Button>
       </div>
     </div>
